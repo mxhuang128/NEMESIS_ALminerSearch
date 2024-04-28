@@ -12,6 +12,7 @@ ALminer (https://alminer.readthedocs.io/en/latest/)
 import alminer
 import numpy as np
 
+# Read galaxies from target list, mainly for (z, beam_requested_in_LP, target_name)
 Target_info = np.genfromtxt("ListTargets_12_CATALYST.txt",skip_header=4,dtype=['U10',float,float,float,float])
 N_targets = len(Target_info)
 
