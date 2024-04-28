@@ -8,12 +8,16 @@ ALminer (https://alminer.readthedocs.io/en/latest/)
     - this is based on "Molecule List 2024"
     - include OCS and H2CS lines, and additional CCH line
 """
+# Import packages
 import alminer
 import numpy as np
 
 Target_info = np.genfromtxt("ListTargets_12_CATALYST.txt",skip_header=4,dtype=['U10',float,float,float,float])
 N_targets = len(Target_info)
 
+# Loop over each target - 
+#     in search for archival data meeting the duplicate criteria for all target molecular transitions in all SGs
+#     then write them into output txt files for keyword search and compile - for sharing among collaborators (JM & EB)
 for tg in range(N_targets):
     TG = Target_info[tg][0]
     Redshift = Target_info[tg][2]
