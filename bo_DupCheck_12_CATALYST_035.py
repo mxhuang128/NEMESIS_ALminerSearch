@@ -1,16 +1,24 @@
 """
-virtualenv alminerenv --python=3.9
-source alminerenv/bin/activate.csh
-pip install alminer
-...[in (alminerenv)]
-deactivate
+Duplication Check for ALMA Cycle 11 Large Program - NEMESIS, April 2024
+Software Required: 
+Python 3.10.14 (on joppe, using conda environment)
+ALminer (https://alminer.readthedocs.io/en/latest/)
+
+* compared to originally shared DupCheck_12_CATALYST_*.py in slack channel, this version is tweaked to include all bonus lines
+    - this is based on "Molecule List 2024"
+    - include OCS and H2CS lines, and additional CCH line
 """
+# Import packages
 import alminer
 import numpy as np
 
+# Read galaxies from target list, mainly for (z, beam_requested_in_LP, target_name)
 Target_info = np.genfromtxt("ListTargets_12_CATALYST.txt",skip_header=1,skip_footer=2,dtype=['U10',float,float,float,float])
 N_targets = len(Target_info)
 
+# Loop over each target - 
+#     in search for archival data meeting the duplicate criteria for all target molecular transitions in all SGs
+#     then write them into output txt files for keyword search and compile - for sharing among collaborators (JM & EB)
 for tg in range(N_targets):
     TG = Target_info[tg][0]
     Redshift = Target_info[tg][2]
