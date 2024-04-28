@@ -1,0 +1,8 @@
+# note for duplication check, Monica 23rd April 2024
+Three main criteria for duplication survey according to the ALMA User Policies:
+1. Same position
+2. Spatial resolution differ by <= 2 (note I intentionally leave beam<0.5*targe_beam to slip in our search, in case of any use later still)
+3. Sensitivity at same spectral resolution differ by <= 2 (currently "flagged" by 2*noise for each SG)
+Additional#1 Searching for velocity resolution finer than 20 km/s (myquery['vel_res_kms'] < 20.0)
+Additional#2 Including mosaic data (point=False, search_radius=1.0)
+************************
