@@ -1,5 +1,5 @@
 """
-Duplication Check for ALMA Cycle 11 Large Program - NEMESIS, April 2024
+Duplication Check for ALMA Cycle 11 Large Program - NEMESIS
 Software Required: 
 Python 3.10.14 (on joppe, using conda environment)
 ALminer (https://alminer.readthedocs.io/en/latest/)
@@ -7,6 +7,7 @@ ALminer (https://alminer.readthedocs.io/en/latest/)
 * compared to originally shared DupCheck_12_CATALYST_*.py in slack channel, this version is tweaked to include all bonus lines
     - this is based on "Molecule List 2024"
     - include OCS and H2CS lines, and additional CCH line
+by Monica Huang, April 2024
 """
 # Import packages
 import alminer
